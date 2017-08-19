@@ -15,6 +15,10 @@
  
  **[<code>GET</code> SearchTextCategoryAd](https://github.com/ankitggits/go-for-it/blob/master/endpoints/searchtext_category_ad.md)**
  
+ 
+### Package Structure ###
+
+
 ### How to run ? ### 
 
-app.js is thApplication runs on port 8090
+Application runs on port 8090 defined in App.js
