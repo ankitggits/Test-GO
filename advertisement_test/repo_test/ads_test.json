@@ -1,0 +1,41 @@
+{
+	"ad_categories": [
+		{
+			"ad_category": "IMR",
+			"ads": [
+				{
+					"ad_key": "DFG_AS_1",
+					"ad_provider": "Den_Fremtidige_Gruppen AS",
+					"ad_text": "Dette er verdens første interaktive blandete reality-tv-show, 'Lost in Time'. Lost in Time lanseres i Norge våren 2017 og tar seerne på et spennende nytt eventyr, som kombinerer spill og TV. For mer informasjon gå her: https://www.futureuniverse.com"
+				},
+				{
+					"ad_key": "TFG_AS_1",
+					"ad_provider": "The_Future_Group_AS",
+					"ad_text": "This is the world´s first interactive mixed reality TV show, 'Lost in Time'. Launched in Norway in Spring 2017, Lost in Time takes viewers on a thrilling new adventure, which combines gaming and TV. For more information go here: https://www.futureuniverse.com"
+				},
+				{
+					"ad_key": "TFG_AS_2",
+					"ad_provider": "The_Future_Group_AS",
+					"ad_text": "https://www.futureuniverse.com"
+				}]
+		},
+		{
+			"ad_category": "Games",
+			"ads": [
+				{
+					"ad_key": "Ubisoft_Inc_1",
+					"ad_provider": "Ubisoft_Inc.",
+					"ad_text": "http://ubisoft.com"
+				},
+				{
+					"ad_key": "NinjaTheory_Inc_1",
+					"ad_provider": "Ninja_Theory_Inc.",
+					"ad_text": "Hellblade: Senua's Sacrifice is out now on #PS4 and PC for $29.99/€29.99/£24.99! Buy: http://www.hellblade.com/buy"
+				},
+				{
+					"ad_key": "Ubisoft_Inc_2",
+					"ad_provider": "Ubisoft_Inc.",
+					"ad_text": "Far Cry 5 - Far Cry comes to America, as the locals of Hope County, Montana have been overtaken by an anti-government militant group."
+				}]
+		}]
+}
