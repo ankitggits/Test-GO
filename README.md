@@ -9,11 +9,11 @@
 
 #### Advertisement Resources
 
- **[<code>GET</code> RandomAd](https://github.com/ankitggits/go-for-it/master/endpoints/random_ad.md)**
+ **[<code>GET</code> RandomAd](https://github.com/ankitggits/go-for-it/blob/master/endpoints/random_ad.md)**
  
- **[<code>GET</code> RandomCategoryAd](https://github.com/ankitggits/go-for-it/master/endpoints/random_category_ad.md)**
+ **[<code>GET</code> RandomCategoryAd](https://github.com/ankitggits/go-for-it/blob/master/endpoints/random_category_ad.md)**
  
- **[<code>GET</code> SearchTextCategoryAd](https://github.com/ankitggits/go-for-it/master/endpoints/searchtext_category_ad.md)**
+ **[<code>GET</code> SearchTextCategoryAd](https://github.com/ankitggits/go-for-it/blob/master/endpoints/searchtext_category_ad.md)**
  
 ### How to run ? ### 
 
