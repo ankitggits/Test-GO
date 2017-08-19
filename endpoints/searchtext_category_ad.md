@@ -5,7 +5,7 @@
 ## Description
 Api will find a random ad from given category and search text in URL path param , in case of unavailability return 404 http status code
 
-#####Note: search text can contain adKey or adProvider. adKey has given priority over provider
+##### Note: search text can contain adKey or adProvider. adKey has given priority over provider
 
 ***
 
