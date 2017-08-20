@@ -83,6 +83,6 @@
 
 ### How to run ? ### 
 
-### How to run ? ### 
+**go run main.go**
 
 Application runs on port 8090 defined in main.go
