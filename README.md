@@ -68,4 +68,4 @@
 
 ### How to run ? ### 
 
-Application runs on port 8090 defined in App.js
+Application runs on port 8090 defined in main.go
