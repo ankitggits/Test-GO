@@ -33,25 +33,38 @@
 
     go-for-it
         ├───advertisement
+        │   ├───config
+        │   │       └───dbConfig.go
+        │   │
         │   ├───handler
         │   │       ├───adHandler.go
+        │   │       ├───chainHandler.go
         │   │       └───regexHandler.go
+        │   │
         │   ├───model
         │   │       ├───ad.go
         │   │       ├───adCategory.go
         │   │       ├───adStore.go
         │   │       └───responseEntity.go
+        │   │
         │   ├───repo
         │   │      └───adRepository.go
+        │   │
         │   └───util
         │          └───adUtility.go
+        │
         ├───advertisement_test
-        │   └───repo_test
-        │               └───adRepository_test.go
+        │                ├───adHandlerIntegration_test.go
+        │                ├───adUtility_test.go
+        │                ├───assertionUtility_test.go
+        │                ├───ads.json
+        │                └───adRepository_test.go
+        │
         ├───endpoints
         │           ├───random_ad.md
         │           ├───random_category_ad.md
         │           └───searchtext_category_ad.md
+        │
         ├───.gitignore
         ├───ads.json
         ├───app.go
@@ -65,6 +78,9 @@
 *   *traceableHandler*: Traces all incoming HTTP requests with request path, method and execution timing
 *   *headersHandler*: Adds http response header, In this example Content-Type header is added as application/json
 *   *regexpHandler*: A pattern matcher for redirecting http requests to respective ad handler 
+*   *adHandler*: Advertisement handlers which is responsible for fetching requested resource and write to response
+
+### How to run ? ### 
 
 ### How to run ? ### 
 
