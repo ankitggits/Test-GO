@@ -85,4 +85,4 @@
 
 **go run main.go**
 
-Application runs on port 8090 defined in main.go
+Application runs on port 8080 defined in main.go

@@ -28,5 +28,5 @@ func main() {
 	regexHnd.HandleFunc("/service$",  adHandler.FindAdByServiceHandler)
 	regexHnd.HandleFunc("/service/[a-zA-Z_0-9]*$", adHandler.FindAdByCategoryHandler)
 	regexHnd.HandleFunc("/service/[a-zA-Z_0-9]*/[a-zA-Z._0-9]*$", adHandler.SearchAdHandler)
-	log.Fatal(http.ListenAndServe(":8090", handlerChain))
+	log.Fatal(http.ListenAndServe(":8080", handlerChain))
 }
