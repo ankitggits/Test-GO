@@ -1,31 +1,9 @@
-package repo_test
+package advertisement_test
 
 import (
 	"testing"
 	"github.com/ankitggits/go-for-it/advertisement/repo"
-	"github.com/ankitggits/go-for-it/advertisement/util"
 )
-
-func TestInit(t *testing.T) {
-	store := util.Init("ads_test.json")
-
-	expectedCategories := 2
-	//test number of categories initialized
-	if len(store.AdCategories)!= expectedCategories {
-		t.Errorf("Test Init failed , expected store initialization with %d categories but found %d", expectedCategories, len(store.AdCategories))
-	}
-	expectedAdsOfIMR := 3
-	//test number of ads initialized for IMR category
-	if len(store.AdCategories[0].Ads)!= expectedAdsOfIMR {
-		t.Errorf("Test Init failed , expected store initialization with %d categories but found %d", expectedAdsOfIMR, len(store.AdCategories[0].Ads))
-	}
-
-	expectedAdsOfGames := 3
-	//test number of ads initialized for Games category
-	if len(store.AdCategories[1].Ads)!= expectedAdsOfGames {
-		t.Errorf("Test Init failed , expected store initialization with %d categories but found %d", expectedAdsOfGames, len(store.AdCategories[1].Ads))
-	}
-}
 
 func TestRandomAd(t *testing.T) {
 	repo := repo.NewAdRepository()
@@ -40,7 +18,7 @@ func TestFindRandomAdByCategory(t *testing.T) {
 	found, ad := repo.FindRandomAdByCategory("IMR")
 	if !found {
 		t.Errorf("Test Random Ad by category failed , Expected record but found none")
-	}else if !(ad.AdKey=="DFG_AS_1" || ad.AdKey=="TFG_AS_1"){
+	}else if !(ad.AdKey=="DFG_AS_1" || ad.AdKey=="TFG_AS_1" || ad.AdKey=="TFG_AS_2"){
 		t.Errorf("Test Random Ad by category failed , found other category record")
 	}
 }

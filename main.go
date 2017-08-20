@@ -3,50 +3,30 @@ package main
 import (
 	"net/http"
 	"log"
-	"time"
 	"github.com/ankitggits/go-for-it/advertisement/handler"
 )
-
-// Trace requests and their execution timing
-func traceableHandler(next http.Handler) http.Handler{
-	fn:= func(w http.ResponseWriter, r *http.Request){
-		t1:= time.Now()
-		next.ServeHTTP(w,r)
-		t2:= time.Now()
-		log.Printf("[%s] %q %v\n" , r.Method, r.URL.String(), t2.Sub(t1))
-	}
-	return http.HandlerFunc(fn)
-}
-
-// Handler adds Response header, For this example only adds content type as json
-func headersHandler(next http.Handler) http.Handler{
-	fn:= func(w http.ResponseWriter, r *http.Request){
-		w.Header().Set("Content-Type", "application/json")
-		next.ServeHTTP(w,r)
-	}
-	return http.HandlerFunc(fn)
-}
-
-// Handler validates Request Method, For this example only allows Get Request Method
-func requestValidatorHandler(next http.Handler) http.Handler{
-	fn:= func(w http.ResponseWriter, r *http.Request){
-		if r.Method != "GET" {
-			w.WriteHeader(http.StatusMethodNotAllowed)
-			return
-		}
-		next.ServeHTTP(w,r)
-	}
-	return http.HandlerFunc(fn)
-}
 
 // Application startup with InMem storage initialization and routing.
 // Uses Custom RegexpHandler for evaluating and validating Restful URL based Path params along with
 // adds chains of handlers for request method validation, logging trace and adding response headers
 func main() {
-	regexHnd  := new(handler.RegexpHandler)
+	//Advertisement Handler
 	adHandler := handler.NewAdHandler()
+	//Regular Expression Handler for matching the pattern of restful type and fetching path params
+	regexHnd  := new(handler.RegexpHandler)
+
+	//Chain Handlers
+	requestValidatorHandler := handler.NewRequestValidatorHandler()
+	traceableHandler := handler.NewTraceableHandler()
+	headersHandler := handler.NewResponseHeaderHandler()
+
+	//Handler Chain configuration
+	handlerChain := requestValidatorHandler.Next(
+							traceableHandler.Next(
+							headersHandler.Next(regexHnd)))
+
 	regexHnd.HandleFunc("/service$",  adHandler.FindAdByServiceHandler)
 	regexHnd.HandleFunc("/service/[a-zA-Z_0-9]*$", adHandler.FindAdByCategoryHandler)
 	regexHnd.HandleFunc("/service/[a-zA-Z_0-9]*/[a-zA-Z._0-9]*$", adHandler.SearchAdHandler)
-	log.Fatal(http.ListenAndServe(":8090", requestValidatorHandler(traceableHandler(headersHandler(regexHnd)))))
+	log.Fatal(http.ListenAndServe(":8090", handlerChain))
 }
