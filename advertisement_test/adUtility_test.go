@@ -1,4 +1,4 @@
-package advertisement
+package advertisement_test
 
 import (
 	"github.com/ankitggits/go-for-it/advertisement/util"
