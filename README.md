@@ -67,7 +67,7 @@
         │
         ├───.gitignore
         ├───ads.json
-        ├───app.go
+        ├───main.go
         └───README.md
         
 ### Handler-Chain ### 
